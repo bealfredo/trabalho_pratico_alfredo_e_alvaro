@@ -14,7 +14,7 @@
 
     <header>
         <div class="logo confeitins">
-            <img src="../images/logo confeitins 3.png" alt="">
+            <img src="./images/logo confeitins 3.png" alt="">
         </div>
 
         <nav id="menu">
@@ -27,18 +27,35 @@
 
         <div class="logo">
             <a href="https://www.unitins.br/nPortal/" target="_blank">
-                <img src="../images/logo unitins.png" alt="logo unitins">
+                <img src="./images/logo unitins.png" alt="logo unitins">
             </a>
         </div>
     </header>
 
     <section id="carrossel">
-        <div class="conteudo">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+        <div class="slides">
+            <div class="slide s1 selected">
+                <img src="./images/hero-donuts.jpg" alt="">
+            </div>
+            <div class="slide s2">
+                <img src="" alt="">
+            </div>
+            <div class="slide s3">
+                <img src="" alt="">
+            </div>
+            <div class="slide s4">
+                <img src="" alt="">
+            </div>
+            <div class="slide s5">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="controls">
+            <span onclick="selectSlide(0)" class="selected"></span>
+            <span onclick="selectSlide(1)"></span>
+            <span onclick="selectSlide(2)"></span>
+            <span onclick="selectSlide(3)"></span>
+            <span onclick="selectSlide(4)"></span>
         </div>
     </section>
 
@@ -51,7 +68,7 @@
     <section id="donuts">
         <h1>CONFEITINS</h1>
         <h3>A CONFEITARIA DA UNITINS</h3>
-        <a href="../page04/contato.html">
+        <a href="./pages/x04_contato.html">
             <button>
                 Entre em contato
             </button>
@@ -75,5 +92,6 @@
     </footer>
 
     <script src="./js/script.js"></script>
+    <script src="./js/x01_index.js"></script>
 </body>
 </html>

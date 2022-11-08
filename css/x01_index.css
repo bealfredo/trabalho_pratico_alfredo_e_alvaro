@@ -104,9 +104,62 @@ section#apresentacoes p {
 /* ---------- carrossel ----------*/
 section#carrossel {
     border: 1px solid blue;
-    height: 30rem;
+    height: 50rem;
+    overflow: hidden;
+    position: relative;
 }
 
+section#carrossel .slides {
+    position: relative;
+    height: 100%;
+    width: 500%;
+    display: flex;
+    transition: all 0.5s;
+}
+
+section#carrossel .slide {
+    width: 20%;
+    transition: 0.5s;
+}
+
+section#carrossel .slides img{
+    width: 100%;
+    height: 100%;
+    border: 2px solid red;
+    object-fit: cover;
+}
+
+/* controls */
+section#carrossel .controls {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(30rem, 80%);
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+    border: 1px solid red;
+    padding: 1rem;
+}
+
+section#carrossel .controls span {
+    width: 4rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+section#carrossel .controls span:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+section#carrossel .controls span.selected {
+    background-color: blueviolet;
+}
 
 /* ---------- sobreConfeitins ----------*/
 section#sobreConfeitins {
