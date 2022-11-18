@@ -20,7 +20,7 @@ body {
 }
 
 body > section {
-    width: min(100%, 100rem);
+    width: min(100%, 120rem);
     /* border: 3px solid green; */
     margin-bottom: 3rem;
     margin-left: auto;
@@ -103,7 +103,7 @@ section#apresentacoes p {
 
 /* ---------- carrossel ----------*/
 section#carrossel {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 50rem;
     overflow: hidden;
     position: relative;
@@ -125,7 +125,7 @@ section#carrossel .slide {
 section#carrossel .slides img{
     width: 100%;
     height: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     object-fit: cover;
 }
 
@@ -139,25 +139,25 @@ section#carrossel .controls {
     display: flex;
     gap: 1rem;
     justify-content: space-evenly;
-    border: 1px solid red;
     padding: 1rem;
 }
 
-section#carrossel .controls span {
+section#carrossel .controls button {
     width: 4rem;
     height: 3rem;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: 0.3s;
+    border: none;
 }
 
-section#carrossel .controls span:hover {
+section#carrossel .controls button:hover {
     background-color: white;
     cursor: pointer;
 }
 
-section#carrossel .controls span.selected {
+section#carrossel .controls button.selected {
     background-color: blueviolet;
 }
 
@@ -193,4 +193,5 @@ section#sobreConfeitins > div:nth-child(2) {
 section#sobreConfeitins img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }

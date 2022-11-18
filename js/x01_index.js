@@ -1,4 +1,4 @@
-const spansCarrosel = document.querySelectorAll("#carrossel .controls span")
+const spansCarrosel = document.querySelectorAll("#carrossel .controls button")
 const divSlides = document.querySelector("#carrossel .slides")
 
 function passSlide(slideNumber) {
@@ -29,3 +29,5 @@ setInterval(function () {
         slideNumber = 0;
     }
 }, 3000);
+
+localStorage.setItem("receitas","bolo de chocolate")

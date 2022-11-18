@@ -1,0 +1,487 @@
+body {
+    background-color: #e8e8e8;
+}
+
+body > section {
+    width: min(100%, 120rem);
+    /* border: 3px solid green; */
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body > .snowflake {
+    /* border: 1px solid black; */
+    filter:drop-shadow(0 0 5px rgba(0,0,0,0.5));
+    position: fixed;
+
+    /* animation: snowflakeBK 30s linear infinite; */
+    animation: snowflakeDestroyed 1s, snowflakeBK 30s linear infinite;
+    animation-play-state: paused, running;
+
+    animation-fill-mode: both;
+    transition: filter 0.3s;
+}
+body > .snowflake:hover {
+    filter:drop-shadow(0 0 5px rgba(0,0,0,01));
+    cursor: grab;
+}
+body > .snowflake:active {
+    cursor: grabbing;
+}
+
+body > .snowflake.destroyed {
+    animation-play-state: running, running;
+    pointer-events: none;
+}
+
+
+@keyframes snowflakeBK {
+    0% {
+        top: -20%;
+        transform: rotate(0);
+    }
+    100% {
+        top: 100%;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes snowflakeDestroyed {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        padding: 100px;
+    }
+}
+
+/* ----------- receitas natalinas--------------*/
+section#receitas.natalinas {
+    
+}
+
+.banner-natalino {
+    /* border: 1px solid red; */
+    padding: 2rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    overflow: hidden;
+
+    background-image: radial-gradient( circle, rgb(114, 137, 108),rgb(9, 47, 0), rgb(4, 20, 0));
+
+    color: rgb(224, 223, 231);
+    text-shadow: 0 0 4px black, 0 0 8px rgb(224, 223, 231);
+    border-radius: 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.banner-natalino :where(h2,h3) {
+    z-index: 2;
+}
+
+.banner-natalino h1 {
+    font-size: 4rem;
+}
+.banner-natalino h2 {
+    font-size: 2.5rem;
+}
+
+.banner-natalino #snowflakeModel {
+    display: none;
+}
+.banner-natalino .snowflake {
+    position: absolute;
+    pointer-events: none;
+    animation: snowflake 10s 2 alternate-reverse;
+}
+@keyframes snowflake {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ----------- receitas --------------*/
+
+section#receitas {
+    position: relative;
+}
+
+.receita {
+    /* border: 1px solid seagreen; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 15px 15px 30px #bebebe,
+                -15px -15px 30px #ffffff;
+    margin-bottom: 5rem;
+    /* background-image: linear-gradient(to right, transparent,transparent, var(--accentColor)); */
+}
+
+/* --- fundos ---*/
+
+
+
+
+/* ----- */
+
+.receita.closed .content-hidden {
+    display: none;
+}
+
+.receita img.receita-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 70%;
+    object-fit: cover;
+}
+
+.receita-content {
+    backdrop-filter: blur(5px);
+
+    padding: 2rem 7rem;
+    position: relative;
+    z-index: 2;
+    background-image: linear-gradient(to right, #e0e0e0, #e0e0e0, rgba(0, 0, 0, 0.3));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: justify;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.receita h2 {
+    background-image: linear-gradient(to right, transparent, var(--accentColor), transparent);
+    width: fit-content;
+    padding: 1rem 5rem;
+    text-shadow: 0 0 4px black;
+    color: white;
+    margin-left: -5rem;
+    position: relative;
+}
+
+.receita img.guirlanda {
+    position: absolute;
+    width: 5rem;
+    top: 0.5rem;
+    left: 95%;
+    z-index: 4;
+    /* filter: drop-shadow(0 0 5px); */
+    animation: guirlanda 10s infinite var(--delay) ease-in-out;
+    transform-origin: top;
+}
+
+@keyframes guirlanda {
+    0% {
+        transform: rotate(0);
+    }
+    33% {
+        transform: rotate(45deg);
+    }
+    66% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+/* receita-about */
+.receita-about {
+    max-width: 85rem;
+    height: 30rem;
+    display: grid;
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    /* align-items: center; */
+    grid-template-areas: 'img description' 'img info';
+    /* border: 1px solid greenyellow; */
+}
+
+.receita-about img.receita-img {
+    display: block;
+    height: 30rem;
+    width: 40rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    grid-area: img;
+}
+
+.receita-about p.description {
+    width: 100%;
+    grid-area: description;
+}
+
+.receita-about .receita-info {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    grid-area: info;
+    align-items: flex-end;
+}
+
+.receita-about .receita-info > span {
+    /* width: 33.33%; */
+    flex: 1;
+    height: 12rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    font-variant: small-caps;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    /* backdrop-filter: blur(5px); */
+}
+
+.receita-about .receita-info .receita-info-value {
+    opacity: 0.7;
+}
+
+.receita-about .receita-info img {
+    width: 4rem;
+}
+
+@media screen and (max-width:950px) {
+    .receita-about {
+        display: grid;
+        grid-template-areas: 'img description' 'info info';
+        height: initial;
+        grid-template-columns: 60% 40%;
+    }
+    .receita-about img.receita-img,
+    .receita-about p.description,
+    .receita-about .receita-info {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .receita-about {
+        display: grid;
+        grid-template-areas: 'img' 'description' 'info';
+        height: initial;
+        grid-template-columns: 100%;
+    }
+}
+
+
+/* receita-content */
+
+.receita-content .content-hidden :where(h3, ul, p) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.receita h3 {
+    opacity: 0.7;
+    text-decoration: 3px underline var(--accentColor);
+    margin-top: 2rem;
+    counter-reset: p;
+}
+
+.receita ul {
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.receita-content .content-hidden p {
+    width: min(85rem, 100%);
+    display: flex;
+}
+.receita-content .content-hidden p:before {
+    counter-increment: p;
+    content: counter(p);
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 3px solid rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.receita div.modo-de-preparo {
+    /* background-color: rgba(255, 255, 255, 0.158); */
+    /* text-shadow: 0 0 10px; */
+    /* backdrop-filter: blur(20px); */
+
+}
+
+
+
+/* possiveis decorações */
+.receita div.possiveis-decoracoes {
+    margin-top: 2rem;
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    background-color: black;
+}
+
+div.possiveis-decoracoes > img {
+    width: 25rem;
+    object-fit: cover;
+    object-position: center;
+    height: 38rem;
+}
+
+/* botões - actions */
+.receita-actions {
+    width: 10rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0 1rem 0 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+
+}
+
+.receita-actions button {
+    /* height: 7rem; */
+    border: none;
+    background: transparent;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transition: background-color 0.3s;
+    outline: none;
+    font-weight: bold;
+}
+
+.receita-actions button:where(:hover, :focus) {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.receita-actions button.favorited {
+    color: rgb(255, 207, 78);
+}
+
+.receita-actions button.favorited span.favorite-icon-holder {
+    animation: favorited 1s;
+}
+
+.receita-actions button p {
+    font-variant: small-caps;
+    text-transform: lowercase;
+}
+
+@keyframes favorited {
+    0% {
+        /* color: whitesmoke; */
+        transform: scale(1.0);
+    }
+    50% {
+        transform: scale(2);
+        /* color: red; */
+    }
+    100% {
+        /* color: red; */
+        transform: scale(1.0);
+    }
+}
+
+/* button show more less*/
+.receita button.receita-show-moreless {
+    padding: 1rem;
+    margin: 2rem auto 0rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 15rem;
+    height: 4rem;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 15px / 50px;
+    transition: all 0.3s;
+    outline: none;
+    cursor: pointer;
+}
+
+.receita button.receita-show-moreless:hover {
+    box-shadow: 4px 0 0 black,
+                -4px 0 0 black;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.receita button.receita-show-moreless:focus {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.receita button.receita-show-moreless.more .receita-show-less{
+    display: none;
+}
+.receita button.receita-show-moreless.less .receita-show-more{
+    display: none;
+}
+
+.receita button.receita-show-moreless img {
+    width: 3rem;
+}
+
+/* especificos de cada receita */
+
+#receita-02 img.receita-background {
+    object-position: left;
+}
+
+
+
+/* --- game-area --- */
+section#game-area {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section#game-area h2 {
+    font-size: min(10rem, 10vw);
+    pointer-events: none;
+    user-select: none;
+    position: relative;
+    z-index: -1;
+    width: fit-content;
+    text-align: center;
+}
