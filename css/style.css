@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    --primaryColor: #2d508d;
+    font-family: 'Roboto', sans-serif;
+    /* background-color: pink; */
+    height: 100vh;
+    margin-top: 8rem;
+}
+
+
+/* ---------- menu ----------*/
+header {
+    height: 7rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: rgba(245, 245, 245, 0.85);
+    backdrop-filter: blur(7px);
+}
+
+header div.logo {
+    width: 14rem;
+    height: 6.1rem;
+    /* background-color: rgba(245, 245, 245, 0.9); */
+    padding: 0.5rem;
+    border-radius: 1rem;
+    position: relative;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header div.logo.confeitins {
+    
+}
+
+header div.logo img {
+    width: 100%;
+}
+
+header nav#menu {
+    /* border: 1px solid green; */
+    display: block;
+    display: flex;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* background-color: red; */
+    height: 100%;
+}
+
+header nav#menu a {
+    text-transform: uppercase;
+    /* font-weight: bold; */
+    padding: 1rem;
+    text-decoration: none;
+    /* color: #333; */
+    border-bottom: 0.3rem solid transparent;
+    transition: border-color 0.3s;
+    color: #2d508d;
+}
+
+header nav#menu a[href="#"] {
+    border-color: #2d508d;
+}
+
+header nav#menu a:hover:not(a[href="#"]) {
+    border-color: rgba(45, 80, 141, 0.5);
+}
+
+
+/* ---------- conteudo ----------*/
+
+
+
+
+/* ---------- rodape ----------*/
+footer {
+    background-color: #2d508d;
+    font-size: 1.3rem;
+    color: whitesmoke;
+    padding: 0.5rem;
+    font-family: 'Roboto';
+    text-align: center;
+}
+
+footer b,
+footer a {
+    color: whitesmoke;
+    font-weight: bold;
+    /* word-spacing: 0.5rem; */
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #e9bc00;
+}

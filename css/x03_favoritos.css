@@ -1,0 +1,41 @@
+#receitas-database {
+    display: none;
+}
+
+section#receitas {
+    /* display: flex !important;
+    flex-direction: column-reverse !important; */
+}
+
+.receita.removed {
+    animation: receitaRemoved 0.3s linear 1 both;
+}
+
+@keyframes receitaRemoved {
+    0% {
+        /* filter: blur(0); */
+        /* height: fit-content; */
+        opacity: 1;
+    }
+    95% {
+        /* filter: blur(10px); */
+        /* height: 0; */
+        opacity: 0;
+    }
+    100% {
+        display: none;
+    }
+}
+
+.banner-sem-favoritos {
+    width: fit-content;
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+    /* border: 1px solid black; */
+    background-color: rgba(0, 0, 0, 0.03);
+    color: rgba(0, 0, 0, 0.5);
+
+    display: none;
+}
