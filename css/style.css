@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap'); /* ubuntu */
+
+
+body {
+    --primaryColor: #2d508d;
+    --secondColor: #e9bc00;
+    --bk-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    padding-top: 7rem;
+    background-color: var(--bk-color);
+}
+
+.receita.target h2 {
+    animation: receitaTarget 2s infinite;
+}
+
+@keyframes receitaTarget {
+    50% {
+        background-color: black;
+    }
+}
+
+
+/* --- scroll ----- */
+
+::-webkit-scrollbar {
+    /* width: 1.8rem;
+    height: 1.8rem; */
+    width: initial;
+}
+::-webkit-scrollbar-track {
+    /* background-color: rgba(245, 245, 245, 1); */
+    background-color: transparent;
+    background-color: #333;
+}
+::-webkit-scrollbar-thumb {
+    /* background-color: rgba(45, 80, 141, 0.35); */
+    background-color: rgba(245, 245, 245, 0.404);
+    border: 5px solid #333;
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(45, 80, 141, 1);
+    background-color: rgba(245, 245, 245, 0.9);
+}
+
+
+/* ---------- menu ----------*/
+header {
+    width: 100vw;
+    height: 7rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: rgba(245, 245, 245, 0.85);
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(7px);
+}
+
+header span.header-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+header div.logo.confeitins.copy {
+    display: none;
+}
+
+header div.logo {
+    width: 14rem;
+    height: 6.1rem;
+    /* background-color: rgba(245, 245, 245, 0.9); */
+    padding: 0.5rem;
+    border-radius: 1rem;
+    position: relative;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header div.logo img {
+    width: 100%;
+}
+
+header nav#menu {
+    /* border: 1px solid green; */
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* background-color: red; */
+    height: 100%;
+}
+
+header nav#menu a {
+    text-transform: uppercase;
+    /* font-weight: bold; */
+    padding: 1rem;
+    text-decoration: none;
+    /* color: #333; */
+    border-bottom: 0.3rem solid transparent;
+    transition: border-color 0.3s;
+    color: #2d508d;
+}
+
+header nav#menu a[href="#"] {
+    border-color: #2d508d;
+}
+
+header nav#menu a:hover:not(a[href="#"]) {
+    border-color: rgba(45, 80, 141, 0.5);
+}
+
+/* ---- icon-menu --------------------- */
+.my-menu-icon {
+    --size : 2.5rem;
+    /* border: 1px solid black; */
+    width: calc(var(--size) * 1.2);
+    height: var(--size);
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    display: none;
+}
+
+/* header.open .my-menu-icon {
+    display: flex;
+} */
+
+.my-menu-icon div.wrapper-rows {
+    position: relative;
+    width: 100%;
+    height: calc(var(--size) * 0.20);
+}
+
+.my-menu-icon div.wrapper-rows span[class^="row-"] {
+    position: absolute;
+}
+
+.my-menu-icon span[class^="row-"] {
+    display: block;
+    width: 100%;
+    height: calc(var(--size) * 0.20);
+    position: relative;
+    transition: all 0.3s;
+
+    /* background-image: linear-gradient(to right, blue, red); */
+    /* border: 1px solid greenyellow; */
+    background-color: #333;
+    border-radius: 10px;
+}
+
+header.open .my-menu-icon span.row-1,
+header.open .my-menu-icon span.row-4 {
+    opacity: 0;
+    width: 0;
+}
+
+header.open .my-menu-icon span.row-2 {
+    transform: rotate(45deg);
+}
+
+header.open .my-menu-icon span.row-3 {
+    transform: rotate(-45deg);
+}
+
+/* ---------- conteudo ----------*/
+
+
+
+
+/* ---------- rodape ----------*/
+
+body {
+    position: relative !important;
+}
+footer {
+    background-color: #2d508d;
+    font-size: 1.3rem;
+    color: whitesmoke;
+    padding: 0.5rem;
+    font-family: 'Roboto';
+    text-align: center;
+}
+
+footer b,
+footer a {
+    color: whitesmoke;
+    font-weight: bold;
+    /* word-spacing: 0.5rem; */
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #e9bc00;
+}
+
+
+
+
+
+
+@media screen and (max-width:950px) {
+    header {
+        display: flex;
+        /* background-color: rgba(245, 245, 245, 0.85); */
+        justify-content: space-between;
+    }
+
+    header div.logo.confeitins.copy {
+        display: flex;
+        margin-left: 2rem;
+    }
+
+    header div.my-menu-icon {
+        display: flex;
+        margin-right: 4rem;
+    }
+
+    header span.header-content {
+        /* border: 3px solid palevioletred; */
+        position: fixed;
+        background-color: inherit;
+        backdrop-filter: blur(10px) !important;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 5rem;
+        
+        top: 7rem;
+        /* left: 0;
+        right: 0; */
+
+        height: calc(100vh - 7rem);
+        width: 100%;
+        z-index: 5;
+        font-weight: bold;
+        transform: translate(100%, 0px);
+        transition: transform 0.3s;
+        visibility: hidden;
+    }
+
+    header.open span.header-content {
+        transform: translate(0);
+        visibility: visible;
+    }
+
+    header.open ~ * {
+        filter: blur(10px);
+        pointer-events: none;
+        user-select: none;
+        transition: filter 0.3s;
+    }
+    
+    header span.header-content div.logo.confeitins {
+        display: none;
+    }
+
+    header div.logo.confeitins {
+    }
+
+    header nav#menu {
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        gap: 0;
+        /* margin-top: 2rem; */
+    }
+
+    header nav#menu a {
+        width: 100%;
+        padding: 2rem;
+        transition: background 0.3s;
+    }
+
+    header nav#menu a[href="#"] {
+        border-color: transparent;
+        /* background-color: rgba(45, 80, 141, 1); */
+        background-image: linear-gradient(to right, transparent, var(--primaryColor), transparent);
+        color: whitesmoke;
+    }
+    
+    header nav#menu a:hover:not(a[href="#"]) {
+        /* background-color: rgba(45, 80, 141, 0.2); */
+        background-image: linear-gradient(to right, transparent, rgba(45, 80, 141, 0.2), transparent);
+        /* border-color: rgba(45, 80, 141, 0.5); */
+        border-color: transparent;
+    }
+    header nav#menu a:active:not(a[href="#"]) {
+        background-color: rgba(45, 80, 141, 1);
+        transition: background none;
+        color: whitesmoke;
+    }
+
+    header div.logo.unitins {
+        position: absolute;
+        bottom: 2rem;
+    }
+}

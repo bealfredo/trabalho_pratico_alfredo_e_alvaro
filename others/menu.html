@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .my-menu-icon {
+            --size : 100px;
+            border: 1px solid black;
+            width: calc(var(--size) * 1.2);
+            height: var(--size);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .my-menu-icon div.wrapper-rows {
+            position: relative;
+            width: 100%;
+            height: calc(var(--size) * 0.20);
+        }
+
+        .my-menu-icon div.wrapper-rows span[class^="row-"] {
+            position: absolute;
+        }
+
+        .my-menu-icon span[class^="row-"] {
+            display: block;
+            width: 100%;
+            height: calc(var(--size) * 0.20);
+            position: relative;
+            transition: all 0.3s;
+
+            /* background-image: linear-gradient(to right, blue, red); */
+            /* border: 1px solid greenyellow; */
+            background-color: #333;
+            border-radius: 10px;
+        }
+
+        
+
+        .my-menu-icon.open span.row-1,
+        .my-menu-icon.open span.row-4 {
+            opacity: 0;
+            width: 0;
+            /* margin: auto; */
+        }
+        /* .my-menu-icon span.row-1 {
+            align-self: flex-end;
+        }
+        .my-menu-icon span.row-4{
+            align-self: flex-start;
+        } */
+
+        .my-menu-icon.open span.row-2 {
+            transform: rotate(45deg);
+        }
+
+        .my-menu-icon.open span.row-3 {
+            transform: rotate(-45deg);
+        }
+
+        
+
+    </style>
+
+</head>
+<body>
+
+    <div class="my-menu-icon closed">
+        <span  class="row-1"></span>
+
+        <div class="wrapper-rows">
+            <span class="row-2"></span>
+            <span class="row-3"></span>
+        </div>
+        <span class="row-4"></span>
+    </div>
+
+    <script>
+
+        const menuIcon = document.querySelector(".my-menu-icon")
+
+        menuIcon.addEventListener("click", function() {
+            if (menuIcon.classList.contains("closed")) {
+                menuIcon.classList.remove("closed")
+                menuIcon.classList.add("open")
+            } else {
+                menuIcon.classList.remove("open")
+                menuIcon.classList.add("closed")
+            }
+        })
+
+        console.log(menuIcon)
+
+
+
+
+    </script>
+    
+</body>
+</html>
