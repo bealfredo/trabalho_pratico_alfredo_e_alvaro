@@ -100,20 +100,3 @@ textarea.addEventListener("input", function() {
 })
 
 contadorElement.textContent = maxlength + "/" + maxlength
-
-
-
-/* footer absolute ou relative - para ficar sempre no bottom */
-const body = document.querySelector('body')
-const footer = document.querySelector('footer')
-const sectionCentro = document.querySelector("section.centro")
-
-function positionFooter() {
-    if(Number(body.clientHeight) < Number(sectionCentro.clientHeight) + 20 + 20 + 70)
-        footer.style.position = 'relative'
-    else
-        footer.style.position = 'absolute'
-}
-positionFooter()
-
-setInterval(positionFooter, 0)
