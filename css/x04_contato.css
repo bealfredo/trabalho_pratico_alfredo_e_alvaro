@@ -4,7 +4,7 @@ body {
     background-position: center;
    
     color: var(--primaryColor);
-    overflow: hidden !important;
+    /* overflow: hidden !important; */
 }
 
 ::-webkit-scrollbar-track {
