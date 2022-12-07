@@ -40,6 +40,7 @@ section.centro {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2rem;
+    margin-bottom: 4rem;
 
     display: flex;
     align-items: center;
@@ -161,8 +162,5 @@ form button:hover {
 
 /* footer */
 footer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    position: relative;
 }
