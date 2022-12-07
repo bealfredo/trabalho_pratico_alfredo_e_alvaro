@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Confeitins</title>
+    <link rel="shortcut icon" href="../images/icon-confeitins.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/fortacoes.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/x04_contato.css">
+
+</head>
+<body>
+
+    <span id="background-form"></span>
+    
+    <header class="closed">
+        <div class="logo confeitins copy">
+            <a href="../index.html">
+                <img src="../images/logo-confeitins.png" alt="">
+            </a>
+        </div>
+        
+        <div class="my-menu-icon closed">
+            <span  class="row-1"></span>
+            <div class="wrapper-rows">
+                <span class="row-2"></span>
+                <span class="row-3"></span>
+            </div>
+            <span class="row-4"></span>
+        </div>
+
+        <span class="header-content">
+            <div class="logo confeitins">
+                <a href="../index.html">
+                    <img src="../images/logo-confeitins.png" alt="">
+                </a>
+            </div>
+
+
+            <nav id="menu">
+                <a href="../index.html">Página inicial</a>
+                <a href="../pages/x02_receitas.html">Receitas</a>
+                <a href="../pages/x03_favoritos.html">Favoritos</a>
+                <a href="#">Contato</a>
+                <a href="../pages/x05_quemsou.html">Sobre nós</a>
+            </nav>
+    
+            <div class="logo unitins">
+                <a href="https://www.unitins.br/nPortal/" target="_blank">
+                    <img src="../images/logo-unitins.png" alt="logo unitins">
+                </a>
+            </div>
+        </span>
+    </header>
+
+
+    <section class="centro">
+        <h1>FORMULÁRIO DE CONTATO</h1>
+       <form>
+            <!-- <legend>Dados Pessoais</legend> -->
+            <span>
+                <label for="fnome">* Nome:</label>
+                <input type="text" id="fnome" class="clicked" name="fnome" placeholder="Insira seu nome" required autofocus>
+            </span>
+            <span>
+                <label for="femail">* E-mail:</label>
+                <input type="email" id="femail" name="femail" placeholder="Insira seu E-mail" required>
+            </span>
+            <span>
+                <label for="ftelefone">* Telefone:</label>
+                <input type="text" id="ftelefone" name="ftelefone" placeholder="(xx) xxxxx-xxxx"  pattern="\(\d{2}\)\s\d{5}-\d{4}" required>
+
+            </span>
+            <span>
+                <label for="fidade">Idade:</label>
+                <input type="number" id="fidade" name="fidade" min="1" max="150">
+            </span>
+            <span class="linha span-sexo"> 
+                <label for="sexo">Sexo:</label>
+                <input type="radio" id="fmasculino" name="sexo" value="Masculino">
+                <label for="fmasculino">Maculino</label>
+                <input type="radio" id="ffeminino" name="sexo" value="Feminino">
+                <label for="ffeminino">Feminino</label>
+                <input type="radio" id="foutro" name="sexo" value="Outro">
+                <label for="foutro">Outro</label>
+            </span>
+            <span class="linha span-estado-cidade">
+                <span>
+                    <label for="festado">Estado:</label>
+                    <select name="festado" id="festado">
+                        <option value="Outro" style="display: none;" selected></option>
+                        <option value="GO">Goiás (GO)</option>
+                        <option value="MG">Minas Gerais (MG)</option>
+                        <option value="RJ">Rio de Janeiro (RJ)</option>
+                        <option value="SP">São Paulo (SP)</option>
+                        <option value="TO">Tocantins (TO)</option>     
+                        <option value="Outro">Outro</option>
+                    </select>
+                </span>
+                <span>
+                    <label for="fcidade" >Cidade:</label>
+                    <select name="fcidade" id="fcidade" disabled>
+                        <option value="Outro" style="display: none;" selected></option>
+                    </select>
+                </span>
+            </span>
+            
+            <!-- <legend>Informações:</legend> -->
+            <span>
+                <label for="fmotivo">Motivo do Contato:</label>
+                <select name="fmotivo" id="fmotivo">
+                    <option value="Outro" style="display: none;" selected></option>
+                    <option value="Dúvida">Dúvida</option>
+                    <option value="Elogio">Elogio</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </span>
+            <span class="span-text-area">
+                <label for="fmsg">* Área de texto</label>
+                <textarea name="fmsg" id="fmsg" cols="30" rows="5" maxlength="500" required></textarea>
+                <span id="fmsg-counter">xxx/xxx</span>
+            </span>
+
+            <button type="submit">Enviar</button>
+        </form>
+      
+    </section>
+
+
+    <footer>
+        <p>Desenvolvido por <b>Alfredo Aguiar</b> e <b>Álvaro Calebe</b> na disciplina de <b>Desenvolvimento Front-End</b> – 07/12/2022 - <a href="https://www.unitins.br/nPortal/" target="_blank">UNITINS</a></p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/x04_contato.js"></script>
+</body>
+</html>
